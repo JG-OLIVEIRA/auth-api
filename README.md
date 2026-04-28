@@ -87,6 +87,3 @@ O projeto segue o padrão **Package-by-Feature**:
 - `handler`: Tratamento de exceções dentro da app.
 - `security`: Tratamento de login, registro e segurança.
 - `user`: Entidades, repositórios e lógica de usuários.
-
----
-Desenvolvido para a comunidade UERJ.
