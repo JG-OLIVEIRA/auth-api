@@ -1,89 +1,92 @@
-# Auth Service
+# 🔐 Auth Service
 
-O Auth Service é um serviço responsável pela autenticação (processo de verificar a identidade do usuário) e autorização (processo de verificar suas permissões). Nele, o usuário pode registrar informações pessoais básicas, como nome completo, e-mail e senha, que serão utilizadas no processo de login.
+API de autenticação e autorização desenvolvida com foco em arquitetura limpa, segurança e boas práticas no ecossistema Java + Spring.
 
-## 🚀 Tecnologias
+O serviço é responsável por:
 
-Este projeto utiliza as seguintes tecnologias:
+- Cadastro de usuários
+- Login com autenticação JWT
+- Controle de permissões e roles
+- Proteção de endpoints
+- Persistência segura de credenciais
 
-- **Java 21** (Linguagem/Plataforma)
-- **PostgreSQL** (Banco de dados relacional)
-- **Flyway** (Migrations)
-- **Lombok** (Biblioteca)
+---
 
-Ecossistema Spring:
+## ✨ Features
 
-1. **SPRING BOOT**
+- ✅ Registro de usuários
+- ✅ Login com JWT
+- ✅ Controle de acesso baseado em Roles
+- ✅ Sistema de permissões
+- ✅ Validação de dados
+- ✅ Paginação com Spring Data
+- ✅ Migrations com Flyway
+- ✅ Estrutura modular `package-by-feature`
+- ✅ API RESTful
+- ✅ Tratamento global de exceções
 
-- Automatic Run, Configurations and Dependencies 
-- Embedded Application Server
+---
 
-2. **SPRING WEB**
+# 🛠️ Tech Stack
 
-- API RESTful 
-- Validation
+## Backend
 
-3. **SPRING HATEOAS**
+- **Java 21**
+- **Spring Boot**
+- **Spring Security**
+- **Spring Data JPA**
+- **Spring Web**
+- **Spring HATEOAS**
+- **PostgreSQL**
+- **Flyway**
+- **Lombok**
+- **Docker**
 
-4. **SPRING DATA**
+---
 
-- JPA
-  - Pagination
-  - Repositories
+# 🧩 Spring Ecosystem
 
-5. **SPRING SECURITY**
+## Spring Boot
 
-- Authorization
-   - Roles (ROLE_USER, ROLER_ADMIN)
-   - Permissions
-  
-- Authentication
-   - Token Authentication
-      - JWT
+- Auto Configuration
+- Embedded Server
+- Dependency Management
 
-## 🛠️ Pré-requisitos
+## Spring Web
 
-Para rodar o projeto localmente, você precisará de:
+- REST API
+- Request Validation
 
-1. **JDK 21** instalado.
-2. **Maven 3.x** (ou usar o `mvnw` incluso).
-3. **PostgreSQL**
-4. **Docker** .
+## Spring Data JPA
 
-## ⚙️ Configuração
+- Repositories
+- Pagination
+- ORM Mapping
 
-O projeto utiliza variáveis de ambiente para configurações sensíveis. Você deve definir as seguintes variáveis:
+## Spring Security
 
-| Variável            | Descrição                                         | Exemplo                                 |
-|:--------------------|:--------------------------------------------------|:----------------------------------------|
-| `DATABASE_URL`      | URL de conexão do Postgres                        | `jdbc:postgresql://localhost:5432/auth` |
-| `DATABASE_USERNAME` | Usuário do banco                                  | `postgres`                              |
-| `DATABASE_PASSWORD` | Senha do banco                                    | `sua_senha`                             |
+### Authentication
 
+- JWT Authentication
+- Token-based Security
 
-## 🏃 Como rodar
+### Authorization
 
-1. **Clonar o repositório:**
-   ```bash
-   git clone https://github.com/JG-OLIVEIRA/auth-service.git
-   cd auth-service
-   ```
+- Roles:
+    - `ROLE_USER`
+    - `ROLE_ADMIN`
 
-2. **Subir os serviços (Docker):**
-   ```bash
-   docker-compose up -d
-   ```
+- Permissions Management
 
-3. **Rodar a aplicação:**
-   ```bash
-   ./mvnw spring-boot:run
-   ```
+---
 
-## 📂 Estrutura do Projeto
+# 📂 Project Structure
 
-O projeto segue o padrão **Package-by-Feature**:
+O projeto segue o padrão arquitetural **Package-by-Feature**, tornando a manutenção e escalabilidade mais simples.
 
-- `common`: Componentes compartilhados, tratamento de erros global e enums.
-- `handler`: Tratamento de exceções dentro da app.
-- `security`: Tratamento de login, registro e segurança.
-- `user`: Entidades, repositórios e lógica de usuários.
+```bash
+src/main/java
+├── common
+├── handler
+├── security
+└── user
